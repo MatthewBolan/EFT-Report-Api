@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -14,7 +15,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url("https://1.bp.blogspot.com/-CXM4b_08uZQ/X_gfs2Sn6_I/AAAAAAAAEiw/rntB9CAVP9c44J7aRkNYf8yxWaqbHmnyQCNcBGAsYHQ/s16000/Escape-from-Tarkov-2021-Latest-Detailed-Guide.jpg");
+  background-size: 66%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
