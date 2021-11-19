@@ -18,7 +18,11 @@ const NewReportForm = (props) => {
 
         type:"",
 
-        description:""
+        description:"",
+
+        reportPicUrl:"",
+
+        reportVidUrl: ""
 
     })
 
@@ -30,9 +34,9 @@ const NewReportForm = (props) => {
 
         type:"",
 
-        description:"",
+        description:""
 
-        reportPicUrl:""
+        
 
     })
 
@@ -82,7 +86,9 @@ const NewReportForm = (props) => {
         
                 description:"",
 
-                reportPicUrl:""
+                reportPicUrl:"",
+
+                reportVidUrl: ""
         
         
             })
@@ -113,16 +119,16 @@ const NewReportForm = (props) => {
 
     return (
 
-        <div>
+        <div className="w-50">
 
-        <h2 className="my-3"> More Info The Better! </h2>
+        <h2 className="my-3"> <u> EFT Report Form </u> </h2>
 
         <form onSubmit = {submitHandler}>
 
 
             <div className="d-flex form-group my-3 align-items-center">
 
-                <label className="mx-3" >Report Name:</label>
+                <label className="mx-3" >Name:</label>
 
                 <input onChange={changeHandler} type="text" name="name" id="" className="form-control my-3" value={formInfo.name} />
 
@@ -134,7 +140,7 @@ const NewReportForm = (props) => {
 
             <div className="d-flex form-group my-3 align-items-center">
 
-                <label className="mx-3">Report Type:</label>
+                <label className="mx-3">Type:</label>
 
                 <input onChange={changeHandler} type="text" name="type" id="" className="form-control my-3" value={formInfo.type} />
 
@@ -146,7 +152,7 @@ const NewReportForm = (props) => {
 
             <div className="d-flex form-group my-3 align-items-center">
 
-                <label className="mx-3">Report Description: </label>
+                <label className="mx-3">Description: </label>
 
                 <textarea onChange={changeHandler} type="text" rows="5" name="description" id="" className="form-control my-3" value={formInfo.description} />
 
@@ -157,12 +163,22 @@ const NewReportForm = (props) => {
 
             <div className="d-flex form-group my-3 align-items-center">
 
-                <label className="mx-3">Report Image Link / Url: </label>
+                <label className="mx-3">Image ( Link / Url ): </label>
 
                 <input onChange={changeHandler} type="text" name="reportPicUrl" id="" className="form-control my-3" value={formInfo.reportPicUrl} />
 
             </div>
 
+
+            <div className="d-flex form-group my-3 align-items-center">
+
+                <label className="mx-3">Video ( Embed Src Url ONLY ): </label>
+
+                <input onChange={changeHandler} type="text" name="reportVidUrl" id="" className="form-control my-3" value={formInfo.reportVidUrl} />
+
+            </div>
+
+            
 
             <input type="submit"  value="Add Report" className="btn btn-success my-5" />
 
@@ -170,7 +186,38 @@ const NewReportForm = (props) => {
 
         </form>
 
+            
+
+                <div className="card-body bg-dark my-5 " id="videoinfo">
+
+                    <p>
+
+                        <u> Video ( Embed Src Url) Instructions / Example </u>
+
+                        <li className="my-5"> Go to the video you'd like to select </li>
+
+                        <li className="my-5"> (Click) Share </li>
+
+                        <li className="my-5"> (Click) Embed </li>
+
+                        <li className="my-5"> (Copy) The Video Embed Src Url </li>
+
+                        <li className="my-5"> (Paste) The Video Embed Src Url Into The Appropriate Form Field</li>
+
+                        <u className="mx-5"> EXAMPLE </u>
+
+                        <li className="my-5">  iframe width="560" height="315" src=" <u> COPY THE VIDEO EMBED SRC URL WITHIN THESE DOUBLE QUOTATION'S </u> " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen iframe </li>
+
+                    </p>
+
+
+                </div>
+
+            
+
         </div>
+
+        
 
 
     );

@@ -26,7 +26,9 @@ const EditReportForm = (props) => {
         
         description:"",
         
-        reportPicUrl:""
+        reportPicUrl:"",
+
+        reportVidUrl:""
 
     })
 
@@ -92,14 +94,14 @@ const EditReportForm = (props) => {
 
         <div>
 
-            <h2 className="my-3" >  Edit Report: <u> {formInfo.name} </u> </h2>
+            <h2 className="my-3" > <u> Edit EFT Report </u>: {formInfo.name} </h2>
 
         <form onSubmit = {submitHandler}>
 
 
             <div className="d-flex form-group my-3 align-items-center">
 
-                <label className="mx-3" >Report Name:</label>
+                <label className="mx-3" > Name:</label>
 
                 <input onChange={changeHandler} type="text" name="name" id="" className="form-control my-3" value={formInfo.name} />
 
@@ -110,7 +112,7 @@ const EditReportForm = (props) => {
 
             <div className="d-flex form-group my-3 align-items-center">
 
-                <label className="mx-3">Report Type:</label>
+                <label className="mx-3"> Type:</label>
 
                 <input onChange={changeHandler} type="text" name="type" id="" className="form-control my-3" value={formInfo.type} />
 
@@ -121,7 +123,7 @@ const EditReportForm = (props) => {
 
             <div className="d-flex form-group my-3 align-items-center">
 
-                <label className="mx-3">Report Description: </label>
+                <label className="mx-3"> Description: </label>
 
                 <input onChange={changeHandler} type="text" name="description" id="" className="form-control my-3" value={formInfo.description} />
 
@@ -130,9 +132,17 @@ const EditReportForm = (props) => {
 
             <div className="d-flex form-group my-3 align-items-center">
 
-                <label className="mx-3">Report Image Link / Url: </label>
+                <label className="mx-3"> Image ( Link / Url ): </label>
 
                 <input onChange={changeHandler} type="text" name="reportPicUrl" id="" className="form-control my-3" value={formInfo.reportPicUrl} />
+
+            </div>
+
+            <div className="d-flex form-group my-3 align-items-center">
+
+                <label className="mx-3"> Video ( Embed Src Url ONLY ): </label>
+
+                <input onChange={changeHandler} type="text" name="reportVidUrl" id="" className="form-control my-3" value={formInfo.reportVidUrl} />
 
             </div>
 

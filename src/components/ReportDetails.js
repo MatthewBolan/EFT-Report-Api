@@ -62,15 +62,24 @@ const ReportDetails = () => {
 
         <div>
 
-            <h1 className="my-5" > <u>Report Name</u>: {reportInfo.name}  </h1>
+            <h1 className="my-3"> <u> EFT Report Details </u> </h1>
+
+            <h2 className="my-5" > <u>Name</u>: {reportInfo.name}  </h2>
 
             <div className="card-body bg-dark">
 
-            <p className="card-text"> <u>Report Type</u>: {reportInfo.type}</p>
+            <p className="card-text"> <u>Type</u>: {reportInfo.type}</p>
 
             <p className="card-text"> <u> Description</u>: {reportInfo.description}</p>
 
-            <p className="card-text"><img src={reportInfo.reportPicUrl} alt="Report Img" height="500px" width="500px" /></p>
+            <p className="card-text my-5"><img src={reportInfo.reportPicUrl} alt="Report Img" height="500px" width="500px" /></p>
+
+            <p className="card-text">
+
+                <iframe width="750" height="750"src={reportInfo.reportVidUrl}></iframe>
+
+            </p>
+
 
             <button onClick = {deleteReport} className="btn btn-danger my-5"> Delete Report </button>
 
