@@ -31,7 +31,7 @@ const Ammunition46x30 = () => {
 
             'x-rapidapi-host': 'escape-from-tarkov.p.rapidapi.com',
 
-            'x-rapidapi-key': '6e730a037bmsh634f4682eec1e61p15dc45jsn18e7ef735328'
+            'x-rapidapi-key': ''
 
             }
 
