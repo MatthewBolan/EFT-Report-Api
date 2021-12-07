@@ -22,6 +22,8 @@ const NewReportForm = (props) => {
 
         reportPicUrl:"",
 
+        reportUplPic:"",
+
         reportVidUrl: ""
 
     })
@@ -46,6 +48,20 @@ const NewReportForm = (props) => {
 
         console.log("Changing the form!")
 
+            if(event.target.type=="file"){
+
+                setFormInfo({
+
+                    ...formInfo,
+    
+                    [event.target.name]: event.target.files[0]
+    
+                })
+
+            }
+
+            else{
+
             setFormInfo({
 
                 ...formInfo,
@@ -54,7 +70,7 @@ const NewReportForm = (props) => {
 
             })
 
-        
+        }
 
     }
 
@@ -64,7 +80,36 @@ const NewReportForm = (props) => {
 
         event.preventDefault()
 
-        axios.post("http://localhost:8000/api/report/create", formInfo)
+
+
+        const formData = new FormData();
+
+        formData.append('name', formInfo.name);
+
+        formData.append('type', formInfo.type);
+
+        formData.append('description', formInfo.description);
+
+        formData.append('reportPicUrl', formInfo.reportPicUrl);
+
+        formData.append('reportUplPic', formInfo.reportUplPic);
+
+        formData.append('reportVidUrl', formInfo.reportVidUrl);
+
+
+
+
+
+
+
+
+
+
+
+
+        axios.post("http://localhost:8000/api/report/create", formData)
+
+        
 
         .then(response => {
 
@@ -87,6 +132,8 @@ const NewReportForm = (props) => {
                 description:"",
 
                 reportPicUrl:"",
+
+                reportUplPic:"",
 
                 reportVidUrl: ""
         
@@ -123,7 +170,7 @@ const NewReportForm = (props) => {
 
         <h2 className="my-3"> <u> EFT Report Form </u> </h2>
 
-        <form onSubmit = {submitHandler}>
+        <form onSubmit = {submitHandler} encType='multipart/form-data' className="bg-dark">
 
 
             <div className="d-flex form-group my-3 align-items-center">
@@ -172,35 +219,44 @@ const NewReportForm = (props) => {
 
             <div className="d-flex form-group my-3 align-items-center">
 
+                <label className="mx-3">Upload Image: </label>
+
+                <input onChange={changeHandler} type="file" accept=".png, .jpg, .jpeg" name="reportUplPic"/>
+
+            </div>
+
+
+            <div className="d-flex form-group my-3 align-items-center">
+
                 <label className="mx-3">Video ( Embed Src Url ONLY ): </label>
 
                 <input onChange={changeHandler} type="text" name="reportVidUrl" id="" className="form-control my-3" value={formInfo.reportVidUrl} />
 
             </div>
 
-            
 
             <input type="submit"  value="Add Report" className="btn btn-success my-5" />
 
 
-
         </form>
 
-            
+
 
                 <div className="card-body bg-dark my-5 " id="videoinfo">
 
                     <p>
 
-                        <u> Video ( Embed Src Url) Instructions / Example </u>
+                        <u> Video ( Embed Src Url ) Instructions / Example </u>
 
-                        <li className="my-5"> Go to the video you'd like to select </li>
+                        <li className="my-5"> Go To The Video You'd Like To Select </li>
 
                         <li className="my-5"> (Click) Share </li>
 
                         <li className="my-5"> (Click) Embed </li>
 
                         <li className="my-5"> (Copy) The Video Embed Src Url </li>
+
+                        <li className="my-5">Optional: (Add) <u className="mx-5">?start=1</u> At The END Of The Video Embed Src Url ---> This Avoids Any Video Starting Point Issues </li>
 
                         <li className="my-5"> (Paste) The Video Embed Src Url Into The Appropriate Form Field</li>
 

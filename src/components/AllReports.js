@@ -57,6 +57,8 @@ const AllReports = (props) => {
 
                                 <th scope="col" >Image</th>
 
+                                <th scope="col" >Uploaded Image</th>
+
                                 <th scope="col">Action</th>
 
                                 </tr>
@@ -74,7 +76,7 @@ const AllReports = (props) => {
                 <div>
 
 
-                    <table className="table table-dark table-hover align-middle">
+                    <table className="table table-dark table-bordered table-hover align-middle">
 
                         <tbody>
 
@@ -82,6 +84,8 @@ const AllReports = (props) => {
                                         <td key = {x}> <Link to = {`/report/${report._id}`} > {report.name} </Link> </td>
 
                                         <td key = {x}> <img src={report.reportPicUrl} alt="Report Img" height="250px" width="250px" /> </td>
+
+                                        <td key = {x}> <img src={`http://localhost:8000/${report.reportUplPic}`} alt="Report Upl Img" height="250px" width="250px" /> </td>
 
                                         <td> <Link to = {`/edit/${report._id}`} className="btn btn-warning" >Edit</Link> </td>
 

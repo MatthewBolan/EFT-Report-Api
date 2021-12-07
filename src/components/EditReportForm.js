@@ -96,7 +96,7 @@ const EditReportForm = (props) => {
 
             <h2 className="my-3" > <u> Edit EFT Report </u>: {formInfo.name} </h2>
 
-        <form onSubmit = {submitHandler}>
+        <form onSubmit = {submitHandler} className="bg-dark">
 
 
             <div className="d-flex form-group my-3 align-items-center">
