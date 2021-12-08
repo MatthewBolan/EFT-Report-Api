@@ -256,9 +256,9 @@ const NewReportForm = (props) => {
 
                         <li className="my-5"> (Copy) The Video Embed Src Url </li>
 
-                        <li className="my-5">Optional: (Add) <u className="mx-5">?start=1</u> At The END Of The Video Embed Src Url ---> This Avoids Any Video Starting Point Issues </li>
-
                         <li className="my-5"> (Paste) The Video Embed Src Url Into The Appropriate Form Field</li>
+
+                        <li className="my-5">Optional: (Add) <u className="mx-5">?start=1</u> At The END Of The Video Embed Src Url ---> This Avoids Any Video Starting Point Issues </li>
 
                         <u className="mx-5"> EXAMPLE </u>
 
